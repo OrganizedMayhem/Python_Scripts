@@ -6,8 +6,8 @@
             "type": "python",
             "request": "launch",
             "stopOnEntry": true,
-            "pythonPath": "${config.python.pythonPath}",
-            "program": "${}",
+            "pythonPath": "C:\\python27\\python.exe",
+            "program": "C:\\python27\\python.exe",
             "debugOptions": [
                 "WaitOnAbnormalExit",
                 "WaitOnNormalExit",
@@ -19,8 +19,8 @@
             "type": "python",
             "request": "launch",
             "stopOnEntry": true,
-            "pythonPath": "${config.python.pythonPath}",
-            "program": "{}",
+            "pythonPath": "C:\\python27\\python.exe",
+            "program": "C:\\python27\\python.exe",
             "externalConsole": false,
             "debugOptions": [
                 "WaitOnAbnormalExit",
@@ -32,8 +32,8 @@
             "type": "python",
             "request": "launch",
             "stopOnEntry": true,
-            "pythonPath": "${config.python.pythonPath}",
-            "program": "",
+            "pythonPath": "C:\\python27\\python.exe",
+            "program": "C:\\python27\\python.exe",
             "args": [
                 "runserver",
                 "--noreload"
@@ -50,7 +50,7 @@
             "type": "python",
             "request": "launch",
             "stopOnEntry": true,
-            "pythonPath": "${config.python.pythonPath}",
+            "pythonPath": "$C:\\python27\\python.exe",
             "program": "${workspaceRoot}/console.py",
             "args": [
                 "dev",
