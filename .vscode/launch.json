@@ -6,7 +6,7 @@
             "type": "python",
             "request": "launch",
             "stopOnEntry": true,
-            "pythonPath": "C:\\python27\\python.exe",
+            "pythonPath": "C:\\python27\\",
             "program": "C:\\python27\\python.exe",
             "debugOptions": [
                 "WaitOnAbnormalExit",
@@ -20,7 +20,7 @@
             "request": "launch",
             "stopOnEntry": true,
             "pythonPath": "C:\\python27\\python.exe",
-            "program": "C:\\python27\\python.exe",
+            "program": "C:\\python27\\Lib\\test\\win_console_handler.py",
             "externalConsole": false,
             "debugOptions": [
                 "WaitOnAbnormalExit",
