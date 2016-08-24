@@ -9,20 +9,19 @@ from time import sleep
 zap = ZAPv2()
 
 print "Starting ZAP..."
-subp
-# This is the API Key (Change if needed)
-key = '7h9uvqrg6cuehu5tlqpnu9dqk9'
-zap.auth.auto_reauth_on(apikey=key)
 
+# This is the API Key (Change if needed)
+key = ''
+
+# Enable Auto Re-Authentication
+zap.auth.auto_reauth_on(apikey=key)
 
 print 'Must include http(s):// in target URL'
 target = raw_input('URL to Scan? ')
 
 # Variables used in Authentication (HTTP/NTLM Authentication)
 port = raw_input('Port? ')
-
 username = raw_input('Username? ')
-
 password = raw_input('Password? ')
 
 print ''
@@ -65,12 +64,12 @@ zap.context.include_in_context(contextname='Default Context', regex=(target + ".
 
 spider = zap.spider.scan_as_user(url=target, contextid=1, userid=0, apikey=key)
 
-print 'Test Spider Status print'
+print 'Spider Status print'
 
-
+# Prints Spider status percentage every 1 second (Not working)
 while zap.spider.status < 100:
     print zap.spider.status
-    time.sleep(.5)
+    time.sleep(1)
 
 print '100 Complete'
 
