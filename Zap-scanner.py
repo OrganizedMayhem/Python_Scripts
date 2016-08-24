@@ -85,3 +85,20 @@ print '100 Complete'
 print ''
 time.sleep(5)
 
+print 'Do you want to save your session?'
+Save = raw_input('y/n').lower()
+if Save == 'y':
+    SessionName = raw_input('Name of Session?')
+    zap.core.save_session(name=SessionName, overwrite=False, apikey=key)
+    print 'Session has been saved to C:\Users\{username}\OWASP ZAP\session'
+    zap.core.shutdown(self, apikey=key)
+elif Save == 'n':
+    print "You've decided to not save your session."
+    print 'Shutting Down ZAP in 10 Seconds..'
+    
+    x = 10
+    while x != 0:
+        print x
+        threading.sleep(1)
+        x -= 1
+    zap.core.shutdown(self, apikey=key)
