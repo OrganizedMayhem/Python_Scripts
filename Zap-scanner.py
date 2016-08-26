@@ -3,6 +3,8 @@ from zapv2 import ZAPv2
 from collections import defaultdict
 from time import sleep
 
+# Run options
+DEBUG = False
 # p = Popen('ZAP.exe', cwd='C:\Program Files (x86)\OWASP\Zed Attack Proxy')
 # stdout, stderr = p.communicate()
 
@@ -12,12 +14,13 @@ print "Starting ZAP..."
 
 # This is the API Key (Change if needed)
 key = ''
-
+zap.httpsessions.
 # Enable Auto Re-Authentication
 zap.auth.auto_reauth_on(apikey=key)
 
 print 'Must include http(s):// in target URL'
 target = raw_input('URL to Scan? ')
+
 
 # Variables used in Authentication (HTTP/NTLM Authentication)
 port = raw_input('Port? ')
@@ -43,6 +46,7 @@ if AuthenticationMethod == 1:
 	zap.authentication.set_authentication_method(contextid=1, authmethodname='formBasedAuthentication',
 												 authmethodconfigparams=('loginURL=' + target + '&username=' + username
 																		 + '&password=' + 'password'))
+	
 elif AuthenticationMethod == 2:
 	print ''
 	print 'Setting Authentication Method to httpAuthentication'
