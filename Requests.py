@@ -1,24 +1,39 @@
 import requests
 import httplib
 
-url = ""
+url = "aspect.com"
 response = requests.get('http://www.' + url)
 
 # Apache #
 Server = response.headers['Server']
-Application, Version = Server.split('/')
+# Application/AVersion are used in final.
+# BlackHole is overwritten.
+
+Application, BlackHole = Server.split('/')
 print ''
-print 'Application is ' + Application
-AVersion, BlackHole = Version.split(' ')
-BlackHole = ''
-print 'Version is ' + AVersion
+if Application == 'Apache':
+    print 'Application is ' + Application
+    AVersion, BlackHole = BlackHole.split(' ')
+    BlackHole = ''
+    print 'Version is ' + AVersion
 
-PoweredBy = response.headers['X-Powered-By']
-Language, LVersion = PoweredBy.split('/')
-FinalVersion, OperatingSystem = LVersion.split('-')
-print 'Programming Language used is ' + Language
-print 'Version is ' + FinalVersion
+    # PoweredBy is Used to parse out the 'X-Powered-By' Header
+    PoweredBy = response.headers['X-Powered-By']
 
+    # Displays
+    Language, LVersion = PoweredBy.split('/')
+    FinalVersion, BlackHole = LVersion.split('-')
+    BlackHole = ''
+    print 'Language used is ' + Language
+    print 'Version is ' + FinalVersion
 
+elif Application == 'Microsoft-IIS':
+    print 'Application is ' + Application
+    print 'IIS Version ' + BlackHole
+    print ''
 
-
+    #PoweredBy is Used to parse out the 'X-Powered-By' Header
+    PoweredBy = response.headers['X-Powered-By']
+    print PoweredBy
+    AspNetVersion = response.headers['X-AspNet-Version']
+    print AspNetVersion
