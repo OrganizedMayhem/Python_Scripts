@@ -12,9 +12,8 @@ zap = ZAPv2()
 
 print "Starting ZAP..."
 
-# This is the API Key (Change if needed)
-key = ''
-zap.httpsessions.
+
+
 # Enable Auto Re-Authentication
 zap.auth.auto_reauth_on(apikey=key)
 
@@ -23,7 +22,7 @@ target = raw_input('URL to Scan? ')
 
 
 # Variables used in Authentication (HTTP/NTLM Authentication)
-port = raw_input('Port? ')
+port = input('Port? ')
 
 # Request Username and Password for Application login
 username = raw_input('Username? ')
