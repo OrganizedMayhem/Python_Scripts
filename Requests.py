@@ -1,7 +1,7 @@
 import requests
 import httplib
 
-url = "aspect.com"
+url = ""
 response = requests.get('http://www.' + url)
 
 # Apache #
