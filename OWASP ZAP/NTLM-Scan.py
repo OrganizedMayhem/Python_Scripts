@@ -24,9 +24,7 @@ username = raw_input('Username? ').lower()
 password = raw_input('Password? ')
 
 # Set's authentication Method
-zap.authentication.set_authentication_method(contextid=1, authmethodname='httpAuthentication',
-												 authmethodconfigparams=('hostname=' + target + '&port=' + port),
-												 apikey=key)
+zap.authentication.set_authentication_method(contextid=1, authmethodname='httpAuthentication', authmethodconfigparams=('hostname=' + target + '&port=' + port), apikey=key)
 
 # Adding User to Context
 print 'Adding User ' + username + ' to Context.'
