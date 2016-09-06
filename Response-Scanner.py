@@ -1,20 +1,23 @@
 import requests
 import httplib
 
-url = ""
-response = requests.get('http://www.' + url)
+response = requests.get('http://www.webscantest.com')
 
 # Apache #
 Server = response.headers['Server']
 # Application/AVersion are used in final.
-# BlackHole is overwritten.
-
-Application, BlackHole = Server.split('/')
+# Version is overwritten.
+print 'Server Response:'
+print Server
+print ''
+print 'Requests:'
+print response 
+Application, Version = Server.split('/')
 print ''
 if Application == 'Apache':
     print 'Application is ' + Application
-    AVersion, BlackHole = BlackHole.split(' ')
-    BlackHole = ''
+    AVersion, Version = Version.split(' ')
+    Version = ''
     print 'Version is ' + AVersion
 
     # PoweredBy is Used to parse out the 'X-Powered-By' Header
@@ -22,14 +25,14 @@ if Application == 'Apache':
 
     # Displays
     Language, LVersion = PoweredBy.split('/')
-    FinalVersion, BlackHole = LVersion.split('-')
-    BlackHole = ''
+    FinalVersion, Version = LVersion.split('-')
+    Version = ''
     print 'Language used is ' + Language
     print 'Version is ' + FinalVersion
 
 elif Application == 'Microsoft-IIS':
     print 'Application is ' + Application
-    print 'IIS Version ' + BlackHole
+    print 'IIS Version ' + Version
     print ''
 
     #PoweredBy is Used to parse out the 'X-Powered-By' Header
