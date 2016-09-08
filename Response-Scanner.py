@@ -1,17 +1,13 @@
 import requests
 import httplib
 
-response = requests.get('http://www.webscantest.com')
+TargetURL = raw_input("Target URL? ")
+response = requests.get(TargetURL)
 
 # Apache #
 Server = response.headers['Server']
 # Application/AVersion are used in final.
 # Version is overwritten.
-print 'Server Response:'
-print Server
-print ''
-print 'Requests:'
-print response 
 Application, Version = Server.split('/')
 print ''
 if Application == 'Apache':
